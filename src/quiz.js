@@ -32,7 +32,7 @@ class Quiz {
     checkAnswer(answer){
       const currentQuestion = this.getQuestion();
       if (currentQuestion.answer === answer){
-        this.correctAnswers +++ 1;
+        this.correctAnswers ++;
         
       }
       
@@ -41,11 +41,10 @@ class Quiz {
  
    // 6. hasEnded()
    hasEnded(){
-    if (this.currentQuestionIndex < this.questions.length){
-        return false;
-    }
-    else (this.currentQuestionIndex === this.questions.length)
-    return true;
+  
+    return this.currentQuestionIndex >= this.questions.length;
+  
+
 }
 
 filterQuestionsByDifficulty(difficulty){
